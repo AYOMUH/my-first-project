@@ -1,0 +1,277 @@
+:root{
+    --min-color: #fda769;
+    --second-color: #708160 ;
+    --text-color: #333;
+    --color: #FF1D65;
+}
+*{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.contanier{
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+    backdrop-filter: blur(9px);
+    padding: 10px;
+}
+/* header  */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--min-color);
+    border-radius: 40px;
+    padding: 10px 20px;
+    margin: 0 10px;
+}
+.header .logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.search input,
+.search button{
+    padding: 6px 10px;
+    border: none;
+    background-color: #eee;
+    border-radius: 10px;
+}
+.search input:focus{
+    outline: none;
+}
+.search button{
+    color: white;
+    background-color:var(--second-color) ;
+}
+
+/* ---header---  */
+
+/* text  */
+.text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+}
+
+.text h2{
+    font-size: 40px;
+    font-weight: 700;
+    color: #FF1D65;
+    margin-bottom: 0;
+}
+.text p{
+    width: 500px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ---text---  */
+
+/* cards  */
+
+.shopping{
+    width: 100%;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.shopping .sections{
+    padding: 10px;
+    width: 25%;
+    height: 300px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}
+.sections h2{
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.sections ul {
+    list-style: none;
+    padding: 0;
+}
+.sections ul li{
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.active{
+    background-color: var(--second-color);
+    border-radius: 6px;
+}
+
+.shopping .cards{
+    padding-left: 30px ;
+    width: 70%;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(200px,1fr));
+    row-gap: 30px;
+    margin: 0;
+}
+
+.card{
+    width: 200px;
+    background-color: #eee;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card .image{
+    width: 200px;
+    height: 200px;
+}
+.card .image img{
+    width: 100%;
+}
+.card .price{
+    margin: 10px 0;
+    padding: 0 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card button{
+    width: 100%;
+    background-color: var(--second-color);
+    padding: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card button:hover{
+    color: var(--min-color);
+}
+.dolar{
+    font-size: 18px;
+    color: green;
+    font-weight: bold;
+}
+
+/* ---cards---  */
+
+
+/* footer  */
+
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 0;
+    background: var(--min-color);
+    color: var(--text-color);
+}
+.footer .icon i{
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.footer .location{
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ---footer---  */
+
+@media (max-width: 768px){
+    .shopping,
+    .shopping .sections{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .shopping .sections{
+        width: 100%;
+        height: 150px;
+    }
+    .shopping .sections ul{
+        display: flex;
+    }
+    .shopping .cards{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill , minmax(200px,1fr));
+        row-gap: 30px;
+    }
+}
+@media (max-width: 500px){
+    .header .logo{
+        width: 30px;
+        height: 30px;
+    }
+    .search input,
+    .search button{
+        font-size: 13px;
+    }
+    .text h2{
+        font-size: 20px;
+    }
+    .text p{
+        width: 300px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .shopping,
+    .shopping .sections{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .sections ul li{
+        font-size: 15px;
+    }
+
+    .card{
+        width: 150px;
+    }
+    .card .image{
+        width: 150px;
+        height: 150px;
+    }
+    .shopping .cards{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill , minmax(150px,1fr));
+        row-gap: 20px;
+    }
+    .card .price,
+    .card button,
+    .footer .icon i,
+    .footer .location,
+    .dolar{
+        font-size: 14px;
+    }
+}
